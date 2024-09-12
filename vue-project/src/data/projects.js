@@ -1,0 +1,6 @@
+export const projects = [
+  { id: 1, name: 'TANKtv NOW SHOWING Online Film Streaming Platform', coverImage: 'https://invincible-hail-0a1.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F65720e9d-0009-4030-ab61-0eaf8365a358%2Fdca74be8-5383-423e-bfe2-a19f2ee81274%2FScreenshot_2024-09-11_at_21.16.08.png?table=block&id=233ec14b-06d9-4a08-830f-c410690db985&spaceId=65720e9d-0009-4030-ab61-0eaf8365a358&width=1420&userId=&cache=v2' },
+  { id: 2, name: 'TANK Magazine Podcast Platform', coverImage: 'https://invincible-hail-0a1.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F65720e9d-0009-4030-ab61-0eaf8365a358%2Fc52a0434-e345-43f8-9128-4e938fbf26b6%2FScreenshot_2024-09-11_at_21.34.31.png?table=block&id=3ac195d7-94cb-4e6c-900c-042d458933f2&spaceId=65720e9d-0009-4030-ab61-0eaf8365a358&width=2000&userId=&cache=v2'},
+  { id: 3, name: 'TANK Magazine Online Magazine', coverImage: ''},
+  { id: 4, name: 'Because Magazine Online Magazine & VR Platform', coverImage: ''}
+];

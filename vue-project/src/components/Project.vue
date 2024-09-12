@@ -3,35 +3,48 @@ defineProps({
   imageUrl: {
     type: String,
     required: true
+  },
+  url: {
+    type: String,
+    required: true
   }
 })
 </script>
 
 <template>
-  <div :style="{ backgroundImage: 'url(' + imageUrl + ')' }" class="item" >
-    <div class="overlay-shadow"></div>
-    
-    <div class="details">
-      <i>
-        <slot name="icon"></slot>
-      </i>
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
+  <a :href="url" target="_blank" rel="noopener noreferrer">
+    <div class="item">
+      <!-- <div class="overlay-shadow disappear"></div> -->
+      <div :style="{ backgroundImage: 'url(' + imageUrl + ')' }" class="image"></div>
+      <div class="details">
+        <i>
+          <slot name="icon"></slot>
+        </i>
+        <h3>
+          <slot name="heading"></slot>
+        </h3>
+      </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <style scoped>
 .item {
   margin-top: 2rem;
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
   position: relative;
-  border: 1px solid var(--color-text);
-  padding:1em;
-  border-radius: 1em;
-  aspect-ratio: 16 / 9;
+}
+.item .image {
   min-width:100%;
+  background-repeat:no-repeat;
+  background-position: top;
+  background-size: contain;
+  aspect-ratio: 16 / 9;
+  filter: drop-shadow(0 .5em .75em var(--vt-c-black-mute-transparent));
+}
+.item:hover {
+  cursor:pointer;
 }
 .overlay-shadow {
   top:0;
@@ -39,14 +52,15 @@ defineProps({
   height:100%;
   width:100%;
   position: absolute;
-  background: linear-gradient(transparent, transparent, #000);
-  border-radius: 1em;
+  background: linear-gradient(transparent, transparent, transparent, var(--vt-c-black-mute-transparent));
+  border-radius: .9em;
   z-index:1;
 }
 
 .details {
   /* flex: 1; */
   /* margin-left: 1rem; */
+  margin-top:1em;
   z-index:3;
   position:relative;
 }
@@ -56,7 +70,7 @@ i {
   place-items: center;
   place-content: center;
   width: 32px;
-  height: 16px;
+  height: auto;
 
   color: var(--color-text);
 }
@@ -86,7 +100,7 @@ h3 {
 
   .item:before {
     content: ' ';
-    border-left: 1px solid var(--color-border);
+    /* border-left: 1px solid var(--color-border); */
     position: absolute;
     left: 0;
     bottom: calc(50% + 25px);
@@ -95,7 +109,7 @@ h3 {
 
   .item:after {
     content: ' ';
-    border-left: 1px solid var(--color-border);
+    /* border-left: 1px solid var(--color-border); */
     position: absolute;
     left: 0;
     top: calc(50% + 25px);
