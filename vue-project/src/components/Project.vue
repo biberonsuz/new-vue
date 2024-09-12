@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <a :href="url" target="_blank" rel="noopener noreferrer">
+  <a :href="url" target="_blank" rel="noopener noreferrer" class="item__container">
     <div class="item">
       <!-- <div class="overlay-shadow disappear"></div> -->
       <div :style="{ backgroundImage: 'url(' + imageUrl + ')' }" class="image"></div>
@@ -29,19 +29,25 @@ defineProps({
 </template>
 
 <style scoped>
+a.item__container {
+  display:block;
+}
 .item {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   position: relative;
+  
 }
 .item .image {
   min-width:100%;
   background-repeat:no-repeat;
   background-position: top;
   background-size: contain;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 15.75 / 9;
   filter: drop-shadow(0 .5em .75em var(--vt-c-black-mute-transparent));
+  border:1px solid var(--color-text);
+  border-radius:10px;
 }
 .item:hover {
   cursor:pointer;
@@ -77,30 +83,21 @@ i {
 
 h3 {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
   display:inline;
 }
-
 @media (min-width: 1024px) {
   .item {
     margin-top: 0;
-    /* padding: 0.4rem 0 1rem calc(var(--section-gap) / 2); */
   }
 
   i {
-    /* top: calc(50% - 25px); */
-    /* left: -26px; */
-    /* position: absolute; */
-    /* border: 1px solid var(--color-border); */
-    /* background: var(--color-background); */
-    /* border-radius: 8px; */
   }
 
   .item:before {
     content: ' ';
-    /* border-left: 1px solid var(--color-border); */
     position: absolute;
     left: 0;
     bottom: calc(50% + 25px);
@@ -109,7 +106,6 @@ h3 {
 
   .item:after {
     content: ' ';
-    /* border-left: 1px solid var(--color-border); */
     position: absolute;
     left: 0;
     top: calc(50% + 25px);

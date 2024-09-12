@@ -1,19 +1,15 @@
 <script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
+
 </script>
 
 <template>
-  <div class="greetings">
-    <h3>{{ msg }}</h3>
+  <div class="contact">
+    <h1>Get in Touch!</h1>
     <h3></h3>
     <h3></h3>
   </div>
 </template>
 
 <style scoped>
+
 </style>
