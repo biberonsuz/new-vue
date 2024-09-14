@@ -8,7 +8,7 @@ import Contact from '../components/Contact.vue'
 
 <template>
   <section class="intro">
-    <Intro msg="Hi, I'm Pınar! &#128075; I am happy to discuss projects in UI/UX Design, Front End Development, VR/AR Design, Type Design and Creative Programming." />
+    <Intro msg="Hi, I'm Pınar! &#128075; I am happy to discuss projects in <a href=''>UI/UX Design</a>, <a>Front End Development</a>, <a>VR/AR Design</a>, <a>Type Design</a> and <a>Creative Programming</a>." />
   </section>
   <Categories />
   <main>
@@ -32,7 +32,7 @@ main {
   display:grid;
   grid-template-columns: 1fr;
   grid-template-rows:1fr;
-  grid-gap:2em;
+  grid-gap:7em;
   min-width:100%;
   padding:2em 0;
   /* min-height:100vh; */
@@ -44,7 +44,7 @@ footer {
 }
 @media (min-width: 1024px) {
   main {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 </style>

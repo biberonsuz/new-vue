@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div class="greetings">
-    <h1>{{ msg }}</h1>
+    <h1 v-html="msg"></h1>
     <h3></h3>
   </div>
 </template>
@@ -20,6 +20,11 @@ h1 {
   font-size: 2.6rem;
   position: relative;
   top: -10px;
+}
+:deep(h1 a) {
+  text-decoration: underline !important;
+  text-underline-offset: .25em;
+  cursor:pointer;
 }
 
 h3 {

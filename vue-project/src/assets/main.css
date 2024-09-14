@@ -13,7 +13,6 @@ a,
   text-decoration: none;
   color: rgb(	0, 67, 255);
   transition: 0.4s;
-  padding: 3px;
 }
 
 .disappear {
@@ -22,6 +21,30 @@ a,
 
 .disappear:hover {
   opacity:0;
+}
+
+button {
+  border:1px solid var(--color-text);
+  border-radius:1.5em;
+  list-style-type: none;
+  padding:.75em;
+  line-height:.75;
+  font-weight: 400;
+  transition:.25s;
+  background: var(--color-background);
+  color:var(--color-text);
+  font-size:inherit;
+}
+
+button.active {
+  background: var(--color-text);
+  color: var(--color-background);
+}
+
+button:hover {
+  cursor:pointer;
+  background: var(--color-text);
+  color: var(--color-background);
 }
 
 @media (hover: hover) {

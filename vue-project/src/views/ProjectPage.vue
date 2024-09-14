@@ -13,11 +13,15 @@ if (!project) {
 </script>
 
 <template>
-  <div v-if="project">
+  <section v-if="project" class="project-cover">
     <h1>{{ project.name }}</h1>
-    <img v-if="project.coverImage" :src="project.coverImage" alt="Project Image" />
-    <p v-else>No image available for this project.</p>
-  </div>
+    <img v-if="project.coverMedia" :src="project.coverMedia" alt="" />
+    <section class="project-body">
+      <img alt="" />
+      <p></p>
+    </section>
+    
+  </section>
 
   <div v-else>
     <p>Project not found</p>
@@ -25,5 +29,9 @@ if (!project) {
 </template>
 
 <style scoped>
-/* Add your styles here */
+.project {
+
+}
+h1 {}
+
 </style>

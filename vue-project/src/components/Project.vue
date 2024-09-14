@@ -14,15 +14,18 @@ defineProps({
 <template>
   <a :href="url" target="_blank" rel="noopener noreferrer" class="item__container">
     <div class="item">
-      <!-- <div class="overlay-shadow disappear"></div> -->
-      <div :style="{ backgroundImage: 'url(' + imageUrl + ')' }" class="image"></div>
+      <img :src="imageUrl" class="image" />
       <div class="details">
         <i>
           <slot name="icon"></slot>
         </i>
-        <h3>
+        <h2>
           <slot name="heading"></slot>
-        </h3>
+        </h2>
+        <p>
+          <slot name="info"></slot>
+        </p>
+        <button class="more">View More</button>
       </div>
     </div>
   </a>
@@ -33,42 +36,29 @@ a.item__container {
   display:block;
 }
 .item {
-  margin-top: 2rem;
+  margin-top: 3em;
   display: flex;
-  flex-direction: column;
   position: relative;
-  
+  gap:3em;
+  width:min-content;
 }
-.item .image {
-  min-width:100%;
-  background-repeat:no-repeat;
-  background-position: top;
-  background-size: contain;
-  aspect-ratio: 15.75 / 9;
+.project:nth-child(even) .item {
+  flex-direction: row-reverse;
+}
+.item img.image {
+  max-height:90vh;
+  min-height:70vh;
   filter: drop-shadow(0 .5em .75em var(--vt-c-black-mute-transparent));
-  border:1px solid var(--color-text);
-  border-radius:10px;
 }
 .item:hover {
   cursor:pointer;
 }
-.overlay-shadow {
-  top:0;
-  left:0;
-  height:100%;
-  width:100%;
-  position: absolute;
-  background: linear-gradient(transparent, transparent, transparent, var(--vt-c-black-mute-transparent));
-  border-radius: .9em;
-  z-index:1;
-}
 
 .details {
-  /* flex: 1; */
-  /* margin-left: 1rem; */
-  margin-top:1em;
   z-index:3;
   position:relative;
+  min-width:35rem;
+  margin-top:2em;
 }
 
 i {
@@ -77,16 +67,21 @@ i {
   place-content: center;
   width: 32px;
   height: auto;
-
+  transform: translateY(12%);
+  margin-right:.5em;
   color: var(--color-text);
 }
 
-h3 {
-  font-size: 1.2rem;
+
+h2 {
+  font-size: 1.8rem;
   font-weight: 400;
-  margin-bottom: 0.4rem;
   color: var(--color-heading);
-  display:inline;
+  display: inline;
+}
+p {
+  margin:1em 0;
+  font-weight: 400;
 }
 @media (min-width: 1024px) {
   .item {
