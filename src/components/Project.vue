@@ -12,16 +12,16 @@ defineProps({
 </script>
 
 <template>
-  <a :href="url" target="_blank" rel="noopener noreferrer" class="item__container">
+  <a :href="url" class="item__container">
     <div class="item">
       <img :src="imageUrl" class="image" />
       <div class="details">
         <i>
           <slot name="icon"></slot>
         </i>
-        <h2>
+        <h1>
           <slot name="heading"></slot>
-        </h2>
+        </h1>
         <p>
           <slot name="info"></slot>
         </p>
@@ -46,7 +46,7 @@ a.item__container {
   flex-direction: row-reverse;
 }
 .item img.image {
-  max-height:90vh;
+  max-height:80vh;
   min-height:70vh;
   filter: drop-shadow(0 .5em .75em var(--vt-c-black-mute-transparent));
 }
@@ -65,23 +65,17 @@ i {
   display: inline-flex;
   place-items: center;
   place-content: center;
-  width: 32px;
-  height: auto;
   transform: translateY(12%);
-  margin-right:.5em;
-  color: var(--color-text);
+  margin-right:.75em;
 }
 
 
-h2 {
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--color-heading);
+h1 {
   display: inline;
 }
 p {
   margin:1em 0;
-  font-weight: 400;
+  font-weight: 450;
 }
 @media (min-width: 1024px) {
   .item {

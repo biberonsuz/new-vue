@@ -2,17 +2,29 @@
 
 #app {
   max-width: 1280px;
+  min-height:100vh;
   width:100%;
+  height:100%;
   margin: 0 auto;
   padding: 2rem;
-  font-weight: normal;
 }
 
-a,
-.blue {
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+a {
   text-decoration: none;
-  color: rgb(	0, 67, 255);
+  color: var(--color-text);
   transition: 0.4s;
+}
+
+.hide {
+  opacity:0;
 }
 
 .disappear {
@@ -29,7 +41,7 @@ button {
   list-style-type: none;
   padding:.75em;
   line-height:.75;
-  font-weight: 400;
+  font-weight: 450;
   transition:.25s;
   background: var(--color-background);
   color:var(--color-text);
@@ -39,6 +51,17 @@ button {
 button.active {
   background: var(--color-text);
   color: var(--color-background);
+}
+
+section.contact {
+  position:fixed;
+  top:1em;
+  right:1.5em;
+}
+footer {
+  background:var(--color-text);
+  color:var(--color-background);
+  min-height:100vh;
 }
 
 button:hover {

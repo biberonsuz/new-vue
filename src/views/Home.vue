@@ -3,7 +3,6 @@ import Intro from '../components/Intro.vue'
 import Categories from '../components/Categories.vue'
 import Projects from '../components/Projects.vue'
 import Contact from '../components/Contact.vue'
-
 </script>
 
 <template>
@@ -14,9 +13,7 @@ import Contact from '../components/Contact.vue'
   <main>
     <Projects />
   </main>
-  <!-- <footer>
-    <Contact />
-  </footer> -->
+  <Contact />
 </template>
 
 <style scoped>
@@ -27,6 +24,7 @@ section.intro {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  scroll-snap-align:center end;
 }
 main {
   display:grid;
@@ -36,11 +34,6 @@ main {
   min-width:100%;
   padding:2em 0;
   /* min-height:100vh; */
-}
-footer {
-  background:var(--color-text);
-  color:var(--color-background);
-  min-height:100vh;
 }
 @media (min-width: 1024px) {
   main {

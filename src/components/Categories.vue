@@ -31,7 +31,7 @@ const uniqueCategories = Array.from(categoriesSet);
     list-style-type: none;
     padding:.75em;
     line-height:.75;
-    font-weight: 400;
+    font-weight: 450;
     transition:.25s;
  }
 

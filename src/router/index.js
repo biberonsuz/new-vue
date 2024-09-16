@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';  // Import the components
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Home from '../views/Home.vue';
 import ProjectPage from '../views/ProjectPage.vue';
 
 const routes = [
@@ -9,16 +9,19 @@ const routes = [
     component: Home,
   },
   {
-    path: '/projects/:id',  // Dynamic route
+    path: '/projects/:id',
     name: 'ProjectPage',
     component: ProjectPage,
-    props: true,  // Allows route params to be passed as props
+    props: true,
   }
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  }
 });
 
 export default router;

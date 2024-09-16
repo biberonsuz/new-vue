@@ -56,24 +56,43 @@
   }
 }
 
+@font-face {
+  font-family: "Uncut Sans";
+  src:
+    local("Uncut Sans"),
+    url("./fonts/UncutSans-Variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: "HK Grotesk";
+  src:
+    local("HK Grotesk"),
+    url("./fonts/HKGrotesk-Regular.woff") format("woff"),
+    url("./fonts/HKGrotesk-Regular.woff2") format("woff2");
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
+  font-weight: 450;
 }
-
+html, body {
+  height:100%;
+  overflow-x:hidden;
+  overflow-y:scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
 body {
-  min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  overflow-x:hidden;
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    'Uncut Sans',
     'Helvetica Neue',
     Inter,
     -apple-system,
@@ -88,7 +107,9 @@ body {
     'Helvetica Neue',
     sans-serif;
   font-size: 1.2rem;
+  font-weight:450;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
