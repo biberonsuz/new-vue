@@ -7,7 +7,7 @@ import Contact from '../components/Contact.vue'
 
 <template>
   <section class="intro">
-    <Intro msg="Hi, I'm Pınar! &#128075; I am happy to discuss projects in <a href=''>UI/UX Design</a>, <a>Front End Development</a>, <a>VR/AR Design</a>, <a>Type Design</a> and <a>Creative Programming</a>." />
+    <Intro msg="Hi, I'm Pınar! &#128075; I deliver projects in <a href='/ui-ux-design'>UI/UX Design</a>, <a href='/front-end-development'>Front End Development</a>, <a href='/type-design'>Type Design</a> and <a href='/vr-ar-design'>VR/AR Design</a>." />
   </section>
   <Categories />
   <main>
@@ -35,9 +35,22 @@ main {
   padding:2em 0;
   /* min-height:100vh; */
 }
-@media (min-width: 1024px) {
-  main {
-    grid-template-columns: 1fr;
-  }
+.project .item {
+  padding-bottom: 20px;
+}
+.project {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  scroll-snap-align: end;
+  min-height:100dvh;
+  padding-bottom:1em;
+}
+.project:first-child {
+  min-height:calc(100dvh - 7.6em);
+  max-height:calc(100dvh - 7.6em);
+}
+.categories {
+  margin-top:1em;
 }
 </style>

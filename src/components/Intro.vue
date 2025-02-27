@@ -17,10 +17,10 @@ defineProps({
 <style scoped>
 h1 {
   font-weight: 450;
-  font-size: 2.6rem;
   position: relative;
   top: -10px;
 }
+
 :deep(h1 a) {
   text-decoration: underline !important;
   text-underline-offset: .25em;

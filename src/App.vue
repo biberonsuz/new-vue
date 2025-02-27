@@ -5,9 +5,11 @@
   <transition name="fade">
     <router-view></router-view>
   </transition>
-  <footer>
-  </footer>
+  <Footer></Footer>
 </template>
+<script setup>
+import Footer from './components/Footer.vue';
+</script>
 <style>
 .fade-enter-active, .fade-leave-active {
   transition-property: opacity;

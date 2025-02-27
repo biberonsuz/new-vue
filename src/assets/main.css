@@ -58,11 +58,6 @@ section.contact {
   top:1em;
   right:1.5em;
 }
-footer {
-  background:var(--color-text);
-  color:var(--color-background);
-  min-height:100vh;
-}
 
 button:hover {
   cursor:pointer;
@@ -88,4 +83,79 @@ button:hover {
     /* grid-template-columns: 1fr 1fr; */
     padding: 0 2rem;
   }
+}
+
+@media (max-width: 760px) {
+  body {
+    line-height:normal;
+  }
+  #app {
+    padding:1em;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    white-space:nowrap;
+    font-size:.85rem;
+    border-radius:1em;
+    list-style-type: none;
+    padding:.5em;
+  }
+
+  svg.material-design-icon__svg {
+    width:20px;
+    height:20px;
+  }
+}
+/* Typeface Projects */
+@font-face {
+  font-family: "Pixie Text";
+  src: url("fonts/Pixie-Text.woff") format("woff");
+}
+@font-face {
+  font-family: "Pixie Small";
+  src: url("fonts/Pixie-Small.woff") format("woff");
+}
+@font-face {
+  font-family: "Pixie Medium";
+  src: url("fonts/Pixie-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Pixie Large";
+  src: url("fonts/Pixie-Large.woff") format("woff");
+}
+@font-face {
+  font-family: "Cumhuriyet Regular";
+  src: url("fonts/Cumhuriyet-Regular.woff2") format("woff2"),
+        url("fonts/Cumhuriyet-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Mozaik Square";
+  src: url("fonts/Mozaik-Square.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Mozaik Round";
+  src: url("fonts/Mozaik-Round.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Mozaik Diamond";
+  src: url("fonts/Mozaik-Diamond.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Mozaik Star";
+  src: url("fonts/Mozaik-Star.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Guggen Display";
+  src: url("fonts/GuggenGX-Beta.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Shah Sans";
+  src: url("fonts/Shah-SansGX.ttf") format("truetype");
 }

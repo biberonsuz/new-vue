@@ -1,6 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import ProjectPage from '../views/ProjectPage.vue';
+import CategoryPage from '../views/CategoryPage.vue';
 
 const routes = [
   {
@@ -13,11 +14,17 @@ const routes = [
     name: 'ProjectPage',
     component: ProjectPage,
     props: true,
-  }
+  },
+  {
+    path: '/:category',
+    name: 'Category',
+    component: CategoryPage,
+    props: true,
+  },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 };

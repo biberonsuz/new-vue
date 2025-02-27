@@ -27,6 +27,9 @@ const toggleLinks = () => {
   gap: .5em;
 }
 
+@media (max-width: 760px) {
+}
+
 .links {
   display: flex;
   flex-direction: column;

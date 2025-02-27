@@ -113,3 +113,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (max-width: 760px) {
+  html, body {
+    /* scroll-snap-type: none; */
+  }
+  body {
+    font-size: .8rem;
+  }
+}
+

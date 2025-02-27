@@ -67,7 +67,6 @@ const loadInitialProject = async () => {
   }
 };
 loadInitialProject();
-
 </script>
 
 <template>
@@ -77,7 +76,7 @@ loadInitialProject();
         <component :is="project.iconComponent" :size="42" class="project-icon" />
       </i>
       <h1>{{ project.name }}</h1>
-      <p>{{ project.description }}</p>
+      <p v-html="project.description || project.shortDescription"></p>
     </section>
     <section class="project-content">
       <div class="slide" v-for="(media, index) in project.contentMedia" :key="index">
@@ -108,7 +107,7 @@ function isImage(media) {
 
 <style scoped>
 .project-cover {
-  margin: 25% 0 5%;
+  margin: 20% 0 5%;
   scroll-snap-align: end;
 }
 i {
@@ -137,13 +136,24 @@ i {
 .project-content video,
 .project-cover img {
   max-height: 85vh;
-  min-height: 70vh;
+  /* min-height: 70vh; */
   max-width:100%;
+  -webkit-backface-visibility: hidden;
   filter: drop-shadow(0 .5em .75em var(--vt-c-black-mute-transparent));
   margin:auto;
   display:block;
 }
 .project-content video {
   border-radius: .6em;
+}
+
+@media (max-width: 760px) {
+  .project-cover {
+    margin: 55% 0 5%;
+  }
+  .project-content .slide {
+    scroll-snap-align: center;
+    min-height: unset;
+  }
 }
 </style>
